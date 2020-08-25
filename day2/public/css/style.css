@@ -1,0 +1,51 @@
+body {
+    margin: 0%;
+    background-image: url(../img/pattern.jpg);
+}
+
+header {
+    background-color: white;
+    /* border: 1px solid black; */
+    width: 100%;
+    position: fixed;
+}
+
+header {
+    top: 0;
+}
+
+nav,
+ul,
+li {
+    float: right;
+    display: flex;
+    margin: 10px;
+    /* color: red; */
+    display: block;
+}
+
+
+section {
+    background-color: white;
+    margin-top: 90px;
+    padding: 25px;
+    /* border: 1px solid red; */
+    margin-left: 75px;
+    margin-right: 75px;
+}
+
+section h1 {
+    text-align: center;
+}
+
+section article {
+    border-bottom: 1px solid black;
+    text-size: 27px;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    text-align: center;
+}
