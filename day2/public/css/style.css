@@ -8,9 +8,11 @@ header {
     width: 100%;
     position: fixed;
     top: 0;
-
 }
 
+header a {
+    float: left;
+}
 
 nav,
 ul,
@@ -19,7 +21,6 @@ li {
     float: right;
     display: flex;
     margin: 10px;
-    /* color: red; */
     display: block;
 }
 
@@ -31,6 +32,7 @@ section {
     margin-left: 75px;
     margin-right: 75px;
 }
+
 
 section h1 {
     text-align: center;
