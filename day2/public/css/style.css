@@ -5,18 +5,17 @@ body {
 
 header {
     background-color: white;
-    /* border: 1px solid black; */
     width: 100%;
     position: fixed;
+    top: 0;
+
 }
 
-header {
-    top: 0;
-}
 
 nav,
 ul,
 li {
+    height: 10px;
     float: right;
     display: flex;
     margin: 10px;
@@ -29,7 +28,6 @@ section {
     background-color: white;
     margin-top: 90px;
     padding: 25px;
-    /* border: 1px solid red; */
     margin-left: 75px;
     margin-right: 75px;
 }
@@ -40,7 +38,6 @@ section h1 {
 
 section article {
     border-bottom: 1px solid black;
-    text-size: 27px;
 }
 
 footer {
