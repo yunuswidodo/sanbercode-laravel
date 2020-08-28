@@ -1,0 +1,16 @@
+.col-md-12 {
+    margin-top: 20px;
+
+    border: 1px solid black;
+}
+
+.card {
+    margin: 20px;
+    width: 90px;
+    display: inline-block;
+
+}
+
+.card-body{
+    
+}
