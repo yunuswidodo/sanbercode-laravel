@@ -83,3 +83,12 @@ formItem.addEventListener("submit", function (evt) { // name, anonim funt , para
 //     document.getElementById("listBarang").innerHTML = printItems(terfilterItems);
 // })
 //---------------------------------------------------- end key up -----------------------------------------------------------
+
+// relase 2
+var count = 0;
+var countButton = document.getElementsByClassName("btn btn-primary");
+
+// formItem.addEventListener("submit", function (evt)
+
+
+// console.log(count);
