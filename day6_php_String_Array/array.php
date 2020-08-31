@@ -79,25 +79,41 @@
             
         */
 
-    $item = array(
-        $nama = array("will" => "Will Byer", "mike" => "Mike Weller", "jim" => "Jim Hopper", "el" => "Eleven"),
-        $age = array("will" => 12, "mike" => 12, "jim" => 43, "el" => 12),
-        $aliases = array("will" => "Will the Wise", "mike" => "Dungeon Master", "jim" => "Chief Hopper", "el" => "El"),
-        $status = array("will" => "Alive", "mike" => "Alive", "jim" => "Deceased", "el" => "Alive")
+    $data = array(
+        array("Name" => "Will Byers", "Age" => 12, "Aliases" => "Will the Wise", "Status" => "Alive"),
+        array("Name" => "Mike Wheeler", "Age" => 12, "Aliases" => "Dungeon Master", "Status" => "Alive"),
+        array("Name" => "Jim Hopper", "Age" => 43, "Aliases" => "Chief Hopper", "Status" => "Deceased"),
+        array("Name" => "Eleven", "Age" => 12, "Aliases" => "El", "Status" => "Alive")
+
     );
 
+    echo "Nama : " . $data[0]['Name'] . "<br>";
+    echo "Umur : " . $data[0]['Age'] . "<br>";
+    echo "Alisase : " . $data[0]['Aliases'] . "<br>";
+    echo "Status : " . $data[0]['Status'] . "<br>";
 
-    echo "name : " . $nama['will'] . "<br>";
-    echo "age : " . $age['will'] . "<br>";
-    echo "Aliases : " . $aliases['will'] . "<br>";
-    echo "Status : " . $status['will'] . "<br>";
+    echo "<br>";
 
+    echo "Nama : " . $data[1]['Name'] . "<br>";
+    echo "Umur : " . $data[1]['Age'] . "<br>";
+    echo "Alisase : " . $data[1]['Aliases'] . "<br>";
+    echo "Status : " . $data[1]['Status'] . "<br>";
 
-    // echo "Name : " . $items[0][0] . "<br>";
-    // echo "Age : " . $items[1][0] . "<br>";
-    // echo "Aliases : " . $items[2][0] . "<br>";
-    // echo "Status : " . $items[3][0] . "<br>";
-    // echo "<br>";
+    echo "<br>";
+
+    echo "Nama : " . $data[2]['Name'] . "<br>";
+    echo "Umur : " . $data[2]['Age'] . "<br>";
+    echo "Alisase : " . $data[2]['Aliases'] . "<br>";
+    echo "Status : " . $data[2]['Status'] . "<br>";
+
+    echo "<br>";
+
+    echo "Nama : " . $data[3]['Name'] . "<br>";
+    echo "Umur : " . $data[3]['Age'] . "<br>";
+    echo "Alisase : " . $data[3]['Aliases'] . "<br>";
+    echo "Status : " . $data[3]['Status'] . "<br>";
+
+    echo "<br>";
 
     ?>
 </body>
