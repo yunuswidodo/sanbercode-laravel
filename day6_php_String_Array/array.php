@@ -78,36 +78,27 @@
             Status: "Alive"
             
         */
-    $items = [
-        ["Will Byers", "Mike Weller", "Jim Hopper", "Eleven"],
-        [12, 12, 43, 12],
-        ["Will the Wise", "Dungeon Master", "Chief Hopper", "El"],
-        ["Alive", "Alive", "Deceased", "Alive"]
-    ];
 
-    echo "Name : " . $items[0][0] . "<br>";
-    echo "Age : " . $items[1][0] . "<br>";
-    echo "Aliases : " . $items[2][0] . "<br>";
-    echo "Status : " . $items[3][0] . "<br>";
-    echo "<br>";
+    $item = array(
+        $nama = array("will" => "Will Byer", "mike" => "Mike Weller", "jim" => "Jim Hopper", "el" => "Eleven"),
+        $age = array("will" => 12, "mike" => 12, "jim" => 43, "el" => 12),
+        $aliases = array("will" => "Will the Wise", "mike" => "Dungeon Master", "jim" => "Chief Hopper", "el" => "El"),
+        $status = array("will" => "Alive", "mike" => "Alive", "jim" => "Deceased", "el" => "Alive")
+    );
 
-    echo "Name : " . $items[0][1] . "<br>";
-    echo "Age : " . $items[1][1] . "<br>";
-    echo "Aliases : " . $items[2][1] . "<br>";
-    echo "Status : " . $items[3][1] . "<br>";
-    echo "<br>";
 
-    echo "Name : " . $items[0][2] . "<br>";
-    echo "Age : " . $items[1][2] . "<br>";
-    echo "Aliases : " . $items[2][2] . "<br>";
-    echo "Status : " . $items[3][2] . "<br>";
-    echo "<br>";
+    echo "name : " . $nama['will'] . "<br>";
+    echo "age : " . $age['will'] . "<br>";
+    echo "Aliases : " . $aliases['will'] . "<br>";
+    echo "Status : " . $status['will'] . "<br>";
 
-    echo "Name : " . $items[0][3] . "<br>";
-    echo "Age : " . $items[1][3] . "<br>";
-    echo "Aliases : " . $items[2][3] . "<br>";
-    echo "Status : " . $items[3][3] . "<br>";
-    echo "<br>";
+
+    // echo "Name : " . $items[0][0] . "<br>";
+    // echo "Age : " . $items[1][0] . "<br>";
+    // echo "Aliases : " . $items[2][0] . "<br>";
+    // echo "Status : " . $items[3][0] . "<br>";
+    // echo "<br>";
+
     ?>
 </body>
 
