@@ -16,7 +16,7 @@ function printItems(array) {
             <h5 class="card-title" id="itemName">${array[i][1]}</h5>
             <p class="card-text" id="itemDesc">${array[i][2]}</p>
             <p class="card-text">${array[i][3]}</p>
-            <a href="#" class="btn btn-primary" id="addCart">Tambahkan ke keranjang</a>
+            <a href="#" class="btn btn-primary" id="addCart" onClick="addKeranjang()">Tambahkan ke keranjang</a>
         </div>
         </div>`
 
@@ -85,10 +85,14 @@ formItem.addEventListener("submit", function (evt) { // name, anonim funt , para
 //---------------------------------------------------- end key up -----------------------------------------------------------
 
 // relase 2
-var count = 0;
-var countButton = document.getElementsByClassName("btn btn-primary");
+
+
 
 // formItem.addEventListener("submit", function (evt)
+count = 0;
 
-
-// console.log(count);
+function addKeranjang() {
+    count += 1;
+    var shoping = document.getElementsByTagName('button')[1];
+    shoping.innerHTML = `<i class="fas fa-shopping-cart"></i> (${count})`
+}
