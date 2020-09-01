@@ -86,9 +86,6 @@ formItem.addEventListener("submit", function (evt) { // name, anonim funt , para
 
 // relase 2
 
-
-
-// formItem.addEventListener("submit", function (evt)
 count = 0;
 
 function addKeranjang() {
