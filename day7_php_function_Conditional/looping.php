@@ -45,13 +45,13 @@
     // Lakukan Looping Di Sini
 
     $soal = 20;
-    for ($i = 2; $i <= $soal; $i++) {
+    for ($i = 2; $i <= $soal; $i += 2) {
         echo $i . " - I Love PHP <br>";
     }
 
     echo "<br>";
 
-    for ($j = 2; $soal >= $j; $soal--) {
+    for ($j = 2; $soal >= $j; $soal -= 2) {
         echo $soal . " - I Love PHP <br>";
     }
 
@@ -68,13 +68,15 @@
     $numbers = [18, 45, 29, 61, 47, 34];
     echo "array numbers: ";
     print_r($numbers);
-    echo "<br>";
     // Lakukan Looping di sini
-    for ($i = 0; $i < count($numbers); $i++) {
-        echo "Array sisa baginya adalah:  " . $numbers[$i] % 5 . "<br>";
+    foreach ($numbers as $value) {
+        $rest[] = $value %= 5;
     }
-    echo "<br>";
 
+    echo "<br>";
+    echo "Array sisa baginya adalah:  ";
+    print_r($rest);
+    echo "<br>";
     echo "<h3> Soal No 3 Looping Asociative Array </h3>";
     /* 
             Soal No 3
@@ -96,10 +98,21 @@
     ];
 
     // Output: 
-    for ($i = 0; $i < count($items); $i++) {
-        echo  $items[$i][0];
-        echo   "Array ( [id] =>" . $items[$i][0] . " [name] => " . $items[$i][1] . " [price] =>" . $items[$i][2] . " [description] => " . $items[$i][3] . " [source] => " . $items[$i][4] . " ) <br>";
+    foreach ($items as $key => $value) {
+        $items = array(
+            'id' => $value[0],
+            'name' => $value[1],
+            'price' => $value[2],
+            'description' => $value[3],
+            'source' => $value[4]
+        );
+        print_r($items);
+        echo "<br>";
     }
+    // for ($i = 0; $i < count($items); $i++) {
+    //     echo  $items[$i][0];
+    //     echo   "Array ( [id] =>" . $items[$i][0] . " [name] => " . $items[$i][1] . " [price] =>" . $items[$i][2] . " [description] => " . $items[$i][3] . " [source] => " . $items[$i][4] . " ) <br>";
+    // }
 
     echo "<h3>Soal No 4 Asterix </h3>";
     /* 
@@ -114,7 +127,7 @@
             * * * * *
         */
 
-    for ($a = 5; $a >= 0; $a--) {
+    for ($a = 5; $a > 0; $a--) {
         for ($b = 5; $b >= $a; $b--) {
             echo "*";
         }
