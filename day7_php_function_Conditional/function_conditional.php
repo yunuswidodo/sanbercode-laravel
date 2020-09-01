@@ -52,15 +52,13 @@
 
     function reverseString($reverse)
     {
-        // echo $reverse . "<br>";
-        $balik = strlen($reverse);
-        $hasil = "";
-        // echo $balik;
-        for ($i = $balik - 1; $i >= 0; $i--) {
-            $hasil = $hasil + $balik[$i][0];
-        }
 
-        return $hasil;
+        $balik = strlen($reverse);
+
+        for ($i = ($balik - 1); $i >= 0; $i--) {
+            echo $reverse[$i];
+        }
+        echo "<br>";
     }
     // Hapus komentar di bawah ini untuk jalankan Code
     reverseString("abduh");
@@ -73,7 +71,7 @@
             Soal No 3 
             Palindrome
             Buatlah sebuah function yang menerima parameter berupa string yang mengecek apakah string tersebut sebuah palindrome atau bukan. 
-            Palindrome adalah sebuah kata atau kalimat yang jika dibalik akan memberikan kata yang sama contohnya: katak, civic.
+            Palindrome adalah sebuah kata atau kalimat yang jika dibalik akan memberikan kata yang sama contohnya: katak, civic
             Jika string tersebut palindrome maka akan mengembalikan nilai true, sedangkan jika bukan palindrome akan mengembalikan false.
             NB: 
             Contoh: 
@@ -83,14 +81,29 @@
             
         */
 
+    function palindrome($reverse)
+    {
+        $balik = strlen($reverse);
+        $hasil = "";
+
+        for ($i = ($balik - 1); $i >= 0; $i--) {
+            $hasil = $hasil . $reverse[$i];
+        }
+        if ($reverse == $hasil) {
+            echo $reverse . " => TRUE";
+        } else {
+            echo $reverse . " => FALSE";
+        }
+        echo "<br>";
+    }
 
     // Code function di sini
 
     // Hapus komentar di bawah ini untuk jalankan code
-    // palindrome("civic") ; // true
-    // palindrome("nababan") ; // true
-    // palindrome("jambaban"); // false
-    // palindrome("racecar"); // true
+    palindrome("civic"); // true
+    palindrome("nababan"); // true
+    palindrome("jambaban"); // false
+    palindrome("racecar"); // true
     ?>
 </body>
 
