@@ -52,10 +52,8 @@
 
     function reverseString($reverse)
     {
-
         $balik = strlen($reverse);
-
-        for ($i = ($balik - 1); $i >= 0; $i--) {
+        for ($i = $balik - 1; $i >= 0; $i--) {
             echo $reverse[$i];
         }
         echo "<br>";
@@ -87,7 +85,7 @@
         $hasil = "";
 
         for ($i = ($balik - 1); $i >= 0; $i--) {
-            $hasil = $hasil . $reverse[$i];
+            $hasil .= $reverse[$i];
         }
         if ($reverse == $hasil) {
             echo $reverse . " => TRUE";

@@ -8,7 +8,7 @@ function ubah_huruf($string)
     for ($i = 0; $i < strlen($string); $i++) {
         $position = strrpos($abjad, $string[$i]);
         //echo $position;
-        $output .= substr($abjad, $position + 1, 1);  // $output .= adalah $output = $ouput .
+        $output .= substr($abjad, $position + 1, 1);  // $output .= adalah $output = $ouput .|| 1 diambil yang awal saja
     }
     return $output . "\n";
 }
