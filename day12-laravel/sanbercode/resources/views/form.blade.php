@@ -12,8 +12,10 @@
 
     <form action="/welcome" method="POST">
         @csrf
+        <label>First Name</label> <br>
         <input type="text" name="nama">
-        <br>
+        <br> <br>
+        <label>last Name</label> <br>
         <input type="text" name="last_name">
         {{-- <input type="submit" value="masuk"> --}}
 
