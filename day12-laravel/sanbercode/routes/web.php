@@ -27,6 +27,10 @@ Route::get('/hitung/{angka1}/tambah/{angka2}', function ($angka1, $angka2) {
     $hasil = $angka1 + $angka2;
     return $hasil; // printnya => /hitung/1/tambah/2
 });
+
+//controler dengan parameter
+Route::get('/post/{id}', 'PostController@show');
+
 //---------------------------------------------------end latihan-----------------------------------------------------
 //------------------------------------------------------ tugas ------------------------------------------------------
 Route::get('/', 'HomeController@index');
