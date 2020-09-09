@@ -23,6 +23,6 @@ Route::get('/', function () {
     return view('items.index');
 });
 
-Route::get('/items/create', function () {
+Route::get('/data-tables', function () {
     return view('items.create');
 });

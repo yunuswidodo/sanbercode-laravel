@@ -56,8 +56,12 @@
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('/adminlte/dist/js/demo.js')}}"></script>
 
-
 @stack('scripts')
+<!-- belajar-->
+{{-- <script>
+  var items = ["hallo", "ini", "items", "dimaster"];
+</script> --}}
+
 
 </body>
 </html>
