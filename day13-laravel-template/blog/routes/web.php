@@ -26,3 +26,10 @@ Route::get('/', function () {
 Route::get('/data-tables', function () {
     return view('items.create');
 });
+
+//------------------------------------------------------------ day 15 ------------------------------
+Route::get('/pertanyaan/create', 'PertanyaanController@create');
+Route::post('/pertanyaan', 'PertanyaanController@store');
+Route::get('/pertanyaan', 'PertanyaanController@index');
+Route::get('/pertanyaan/{pertanyaan_id}', 'PertanyaanController@show'); //{id}=>tidak harus {id} bebas, hanya sebatas parameter || nama tidak harus sama dengan yang dicontroller
+Route::get('/pertanyaan/{pertanyaan_id}/edit', 'PertanyaanController@edit');

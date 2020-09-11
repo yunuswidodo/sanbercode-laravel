@@ -1,6 +1,6 @@
 <?php
 
-function perolehan_medali()
+function perolehan_medali($data)
 {
     if (count($data) == 0) {
         return "no data";
@@ -26,19 +26,40 @@ function perolehan_medali()
                 $arr[$pos]["emas"] += 1;
             }
             if ($data[$i][1] == "perak") {
-                $arr[$pos]["peraka"] += 1;
+                $arr[$pos]["perak"] += 1;
             }
             if ($data[$i][1] == "perunggu") {
                 $arr[$pos]["perunggu"] += 1;
             }
-        }
-
-        else { // jika negara belum pernah diinput, buat array associative baru didalam variable $arr sesuai dengan jenis medali yang didapat
+        } else { // jika negara belum pernah diinput, buat array associative baru didalam variable $arr sesuai dengan jenis medali yang didapat
             $history[] = $data[$i][0]; //menambahkan negara tersebut kedalam $histori
-
+            if ($data[$i][1] == "emas") {
+                $arr[] = [
+                    "negara" => $data[$i][0],
+                    "emas" => 1,
+                    "perak" => 0,
+                    "perunggu" => 0
+                ];
+            }
+            if ($data[$i][1] == "perak") {
+                $arr[] = [
+                    "negara" => $data[$i][0],
+                    "emas" => 0,
+                    "perak" => 1,
+                    "perunggu" => 0
+                ];
+            }
+            if ($data[$i][1] == "perunggu") {
+                $arr[] = [
+                    "negara" => $data[$i][0],
+                    "emas" => 0,
+                    "perak" => 0,
+                    "perunggu" => 1
+                ];
+            }
         }
-
     }
+    return $arr;
 }
 
 $data = array(
@@ -50,3 +71,6 @@ $data = array(
     array('Indonesia', 'perak'),
     array('Indonesia', 'emas')
 );
+
+print_r(perolehan_medali($data));
+print_r(perolehan_medali([]));
