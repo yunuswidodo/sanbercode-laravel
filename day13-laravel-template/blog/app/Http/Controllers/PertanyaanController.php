@@ -12,6 +12,7 @@ class PertanyaanController extends Controller
         return view('pertanyaan.formpertanyaan');
     }
 
+    //insert kedatabase pakai request
     public function store(Request $request)
     {
         // dd($request->all());
@@ -50,6 +51,30 @@ class PertanyaanController extends Controller
     {
         $pertanyaans = DB::table('pertanyaans')->where('id', $id)->first();
         // dd($pertanyaans);
-        return view('pertanyaans.edit', compact('pertanyaan'));
+        return view('pertanyaan.edit', compact('pertanyaans'));
+    }
+
+    //insert pakai request
+    // $id = param,
+    public function update($id, Request $request)
+    {
+
+        $request->validate([
+            'judul' => 'required|unique:pertanyaans',
+            'isi' => 'required'
+        ]);
+
+        $pertanyaans = DB::table('pertanyaans')
+            ->where('id', $id)
+            ->update([
+                'judul' => $request['judul'],
+                'isi' => $request['isi']
+            ]);
+        return redirect('/pertanyaan')->with('success', 'Berhasil Update Pertanyaan');
+    }
+
+    public function destroy($id){
+        $pertanyaans = DB::table('pertanyaans')->where('id', $id)->delete();
+        return redirect('/pertanyaan')->with('success', 'Berhasil Hapus Pertanyaan');
     }
 }

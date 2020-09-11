@@ -28,8 +28,10 @@ Route::get('/data-tables', function () {
 });
 
 //------------------------------------------------------------ day 15 ------------------------------
-Route::get('/pertanyaan/create', 'PertanyaanController@create');
-Route::post('/pertanyaan', 'PertanyaanController@store');
-Route::get('/pertanyaan', 'PertanyaanController@index');
+Route::get('/pertanyaan/create', 'PertanyaanController@create'); // create form
+Route::post('/pertanyaan', 'PertanyaanController@store'); // add to database
+Route::get('/pertanyaan', 'PertanyaanController@index'); // show all item
 Route::get('/pertanyaan/{pertanyaan_id}', 'PertanyaanController@show'); //{id}=>tidak harus {id} bebas, hanya sebatas parameter || nama tidak harus sama dengan yang dicontroller
-Route::get('/pertanyaan/{pertanyaan_id}/edit', 'PertanyaanController@edit');
+Route::get('/pertanyaan/{pertanyaan_id}/edit', 'PertanyaanController@edit'); // edit
+Route::put('/pertanyaan/{pertanyaan_id}', 'PertanyaanController@update'); // update
+Route::delete('/pertanyaan/{pertanyaan_id}','PertanyaanController@destroy'); // delete

@@ -36,6 +36,13 @@
                       <a href="/pertanyaan/{{$tanya->id}}" class="btn btn-info btn-sm">show</a>
                       {{-- untuk edit --}}
                       <a href="/pertanyaan/{{$tanya->id}}/edit" class="btn btn-default btn-sm">edit</a>
+                      {{-- khusus delete menggunakan form --}}
+                  <form action="/pertanyaan/{{$tanya->id}}" method="POST">
+                    @csrf
+                    {{-- pemaksaan method --}}
+                    @method('DELETE') 
+                      <input type="submit" value="delete" class="btn btn-danger btn-sm">
+                  </form>
                   </td>
                   </tr>
                   @empty
