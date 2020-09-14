@@ -1,0 +1,11 @@
+->hapus dulu tabel sambunga yang ada dibawah tabel utama
+
+//cek  dulu foreignnya
+SELECT * FROM INFORMATION_SCHEMA. TABLE_CONSTRAINTS WHERE TABLE_NAME = 'pertanyaans'
+//delete forign
+ALTER TABLE pertanyaans DROP FOREIGN KEY Pertanyaans_profil_id_foreign
+// hapus tabel yang diingikan
+//drop diview
+
+// link lengkap disini
+https://www.youtube.com/watch?v=sToK0MCEtTo
