@@ -15,11 +15,11 @@ Route::get('/bismilah', function () {
     return view('welcome');
 });
 
-Route::get('/', 'ResepController@index');
-Route::get('/resep/create', 'ResepController@Create');
-Route::post('/resep', 'ResepController@Store');
-Route::get('/resep', 'ResepController@Tampilkan');
-Route::get('/resep/{id}', 'ResepController@Detail');
-Route::get('/resep/{id}/edit', 'ResepController@Edit');
-Route::put('/resep/{id}', 'ResepController@Update');
-Route::delete('/resep/{id}', 'ResepController@Destroy');
+Route::get('/', 'ResepController_copy@index');
+Route::get('/resep/create', 'ResepController_copy@Create');
+Route::post('/resep', 'ResepController_copy@Store');
+Route::get('/resep', 'ResepController_copy@Tampilkan');
+Route::get('/resep/{id}', 'ResepController_copy@Detail');
+Route::get('/resep/{id}/edit', 'ResepController_copy@Edit');
+Route::put('/resep/{id}', 'ResepController_copy@Update');
+Route::delete('/resep/{id}', 'ResepController_copy@Destroy');

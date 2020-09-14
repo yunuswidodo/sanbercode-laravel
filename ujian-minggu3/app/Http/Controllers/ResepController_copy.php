@@ -6,7 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class ResepController extends Controller
+class ResepController_copy extends Controller
 {
     public function index()
     {
