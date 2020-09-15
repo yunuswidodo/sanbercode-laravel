@@ -13,7 +13,8 @@
                 {{session('success')}}
             </div>
             @endif
-            <a class="btn btn-primary mb-2" href="/pertanyaan/create">Create New Pertanyaans</a>
+            {{-- link menggunakan name route --}}
+          <a class="btn btn-primary mb-2" href="{{route('pertanyaan.create')}}">Create New Pertanyaans</a>
           <table class="table table-bordered">
             <thead>                  
               <tr>
@@ -33,9 +34,11 @@
                   <td>{{$tanya->isi}}</td>
                   <td style="display:flex;">
                       {{-- ambil id  || unutk show--}}
-                      <a href="/pertanyaan/{{$tanya->id}}" class="btn btn-info btn-sm">show</a>
+                  <a href="{{route('pertanyaan.show', ['pertanyaan' => $tanya->id] )}}" class="btn btn-info btn-sm">show</a>
                       {{-- untuk edit --}}
-                      <a href="/pertanyaan/{{$tanya->id}}/edit" class="btn btn-default btn-sm">edit</a>
+                      {{-- <a href="/pertanyaan/{{$tanya->id}}/edit" class="btn btn-default btn-sm">edit</a> --}}
+                      {{-- menggunakanroute --}}
+                  <a href="{{route('pertanyaan.edit', ['pertanyaan' => $tanya->id])}}" class="btn btn-default btn-sm">edit</a>
                       {{-- khusus delete menggunakan form --}}
                   <form action="/pertanyaan/{{$tanya->id}}" method="POST">
                     @csrf

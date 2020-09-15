@@ -5,9 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\pertanyaan;
+use Illuminate\Support\Facades\Auth;
 
 class PertanyaanController extends Controller
 {
+
+    public function __construct()
+    {
+        // excep => kecuali 
+        $this->middleware('auth')->except(['index', 'edit', 'store']);
+    }
+
     public function create()
     {
         return view('pertanyaan.formpertanyaan');
@@ -37,7 +45,8 @@ class PertanyaanController extends Controller
         // orm -> mass assigment
         $query = pertanyaan::create([
             "judul" => $request["judul"],
-            "isi" => $request["isi"]
+            "isi" => $request["isi"],
+            "user_id" => Auth::id() // tidak kerja tidak ada hubungan pinter
         ]);
 
 
@@ -54,23 +63,28 @@ class PertanyaanController extends Controller
 
         // menggunakan orm
         $pertanyaans = pertanyaan::all();
-        dd($pertanyaans);
         return view('pertanyaan.index', compact('pertanyaans'));
     }
 
     //$id = param
     public function show($id)
     {
-        $pertanyaans = DB::table('pertanyaans')->where('id', $id)->first();  // select from .. where id = $id | first => tampilkan satu data object| kalao get menjadi colection array
+        // $pertanyaans = DB::table('pertanyaans')->where('id', $id)->first();  // select from .. where id = $id | first => tampilkan satu data object| kalao get menjadi colection array
         // dd($pertanyaans);
+
+        // menggunakaan orm 
+        $pertanyaans = pertanyaan::find($id);  // retrieving single models / aggregates
         return view('pertanyaan.show', compact('pertanyaans'));
     }
 
     //$id = param
     public function edit($id)
     {
-        $pertanyaans = DB::table('pertanyaans')->where('id', $id)->first();
+        // $pertanyaans = DB::table('pertanyaans')->where('id', $id)->first();
         // dd($pertanyaans);
+
+        // menggunakan orm
+        $pertanyaans = pertanyaan::find($id);
         return view('pertanyaan.edit', compact('pertanyaans'));
     }
 
@@ -84,18 +98,28 @@ class PertanyaanController extends Controller
             'isi' => 'required'
         ]);
 
-        $pertanyaans = DB::table('pertanyaans')
-            ->where('id', $id)
+        // $pertanyaans = DB::table('pertanyaans')
+        //     ->where('id', $id)
+        //     ->update([
+        //         'judul' => $request['judul'],
+        //         'isi' => $request['isi']
+        //     ]);
+
+        // menggunakan orm || mass updates
+        $pertanyaan = pertanyaan::where('id', $id)
             ->update([
-                'judul' => $request['judul'],
-                'isi' => $request['isi']
+                "judul" => $request['judul'],
+                "isi" => $request['isi']
             ]);
         return redirect('/pertanyaan')->with('success', 'Berhasil Update Pertanyaan');
     }
 
     public function destroy($id)
     {
-        $pertanyaans = DB::table('pertanyaans')->where('id', $id)->delete();
+        // $pertanyaans = DB::table('pertanyaans')->where('id', $id)->delete();
+
+        // menggunakan orm
+        pertanyaan::destroy($id);
         return redirect('/pertanyaan')->with('success', 'Berhasil Hapus Pertanyaan');
     }
 }
