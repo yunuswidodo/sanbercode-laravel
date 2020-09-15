@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\pertanyaan;
 
 class PertanyaanController extends Controller
 {
@@ -22,10 +23,25 @@ class PertanyaanController extends Controller
             'isi' => 'required'
         ]);
         // untuk insert data
-        $query = DB::table('pertanyaans')->insert([
+        // $query = DB::table('pertanyaans')->insert([
+        //     "judul" => $request["judul"],
+        //     "isi" => $request["isi"]
+        // ]);
+
+        // orm
+        // $query = new pertanyaan;
+        // $query->judul = $request["judul"];
+        // $query->isi = $request["isi"];
+        // $query->save(); // masukin data ke database
+
+        // orm -> mass assigment
+        $query = pertanyaan::create([
             "judul" => $request["judul"],
             "isi" => $request["isi"]
         ]);
+
+
+
         // redirec dengan pesan
         return redirect('/pertanyaan')->with('success', 'Pertanyaan berhasil disimpan');
     }
@@ -33,8 +49,12 @@ class PertanyaanController extends Controller
     public function index()
     {
         // ambil data|| paling kiri adalah var
-        $pertanyaans = DB::table('pertanyaans')->get(); // select * from
+        // $pertanyaans = DB::table('pertanyaans')->get(); // select * from
         // dd($pertanyaans);
+
+        // menggunakan orm
+        $pertanyaans = pertanyaan::all();
+        dd($pertanyaans);
         return view('pertanyaan.index', compact('pertanyaans'));
     }
 
