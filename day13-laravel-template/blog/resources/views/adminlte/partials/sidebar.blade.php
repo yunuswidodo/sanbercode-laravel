@@ -16,7 +16,9 @@
           <img src="{{asset('adminlte/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-        <a href="#" class="d-block">{{Auth::user()->name}}</a>
+        <a href="#" class="d-block"> alexander
+          {{-- {{Auth::user()->name}} jika ingin tahu yan login dari database--}} 
+        </a>
         </div>
       </div>
 

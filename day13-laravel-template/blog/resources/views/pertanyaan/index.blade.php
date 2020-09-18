@@ -21,6 +21,7 @@
                 <th style="width: 10px">#</th>
                 <th>Judul</th>
                 <th>Isi</th>
+                <th>Penanya</th>
                 <th style="width: 40px">Action</th>
               </tr>
             </thead>
@@ -32,6 +33,8 @@
                   <td>{{$key + 1}}</td>
                   <td>{{$tanya->judul}}</td>
                   <td>{{$tanya->isi}}</td>
+                  {{-- penanya method in model pertanyaan method penanya dan diarahkan ketabel profils trus nama kolomnya--}}
+                  <td>{{$tanya->penanya->nama_lengkap}}</td> 
                   <td style="display:flex;">
                       {{-- ambil id  || unutk show--}}
                   <a href="{{route('pertanyaan.show', ['pertanyaan' => $tanya->id] )}}" class="btn btn-info btn-sm">show</a>

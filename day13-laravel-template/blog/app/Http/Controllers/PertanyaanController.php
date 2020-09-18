@@ -12,8 +12,8 @@ class PertanyaanController extends Controller
 
     public function __construct()
     {
-        // excep => kecuali 
-        $this->middleware('auth')->except(['index', 'edit', 'store']);
+        //midlleware excep => kecuali 
+        $this->middleware('auth')->except(['index', 'show']);
     }
 
     public function create()
@@ -26,28 +26,33 @@ class PertanyaanController extends Controller
     {
         // dd($request->all());
         // required = tidak bole kosong|| untuk validasi
-        $request->validate([
-            'judul' => 'required|unique:pertanyaans',
-            'isi' => 'required'
-        ]);
+        // $request->validate([
+        //     'judul' => 'required|unique:pertanyaans',
+        //     'isi' => 'required'
+        // ]);
         // untuk insert data
         // $query = DB::table('pertanyaans')->insert([
         //     "judul" => $request["judul"],
         //     "isi" => $request["isi"]
         // ]);
 
+        // cari tahu user yang login untuk colom profile_id 
+        $user = Auth::user();
+        $profile = $user->profile; // tabel user method profile
+        // dd($profile->id);
         // orm
-        // $query = new pertanyaan;
-        // $query->judul = $request["judul"];
-        // $query->isi = $request["isi"];
-        // $query->save(); // masukin data ke database
+        $query = new pertanyaan;
+        $query->judul = $request["judul"];
+        $query->isi = $request["isi"];
+        $query->profil_id = $profile->id;
+        $query->save(); // masukin data ke database
 
         // orm -> mass assigment
-        $query = pertanyaan::create([
-            "judul" => $request["judul"],
-            "isi" => $request["isi"],
-            "user_id" => Auth::id() // tidak kerja tidak ada hubungan pinter
-        ]);
+        // $query = pertanyaan::create([
+        //     "judul" => $request["judul"],
+        //     "isi" => $request["isi"],
+        //     "user_id" => Auth::id() // tidak kerja tidak ada hubungan pinter
+        // ]);
 
 
 
