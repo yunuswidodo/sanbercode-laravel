@@ -41,6 +41,9 @@ Route::get('/data-tables', function () {
 
 Route::resource('pertanyaan', 'PertanyaanController');
 
+// Route::resource('jawaban', 'JawabanController');
+Route::post('/jawaban/{pertanyaan_id}', 'JawabanController@store');
+
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
